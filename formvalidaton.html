@@ -1,0 +1,108 @@
+<html>
+    <head>
+        <title>form validation page</title>
+        <script type="text/javascript">
+        function fn1()
+        {
+            var username=document.getElementById("head");
+            var pass=document.getElementById("text");
+            if(username.value.trim()=="")
+            {
+                 alert("enter the username");
+                 username.style="border:2px solid red;"
+                 document.getElementById("ram").style.visibility="visible";
+                 return false;
+            }
+            else if(pass.value.trim()=="")
+            {
+                   alert("enter password");
+                   pass.style="border:2px solid red;"
+                   document.getElementById("mohan").style.visibility="visible";
+                   return false;
+            }
+            else if(pass.value.trim().length<5)
+            {
+                alert("password length should be more than 5 digit")
+                pass.style="border:2px solid red;"
+                document.getElementById("mohan").style.visibility="visible";
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+
+        </script>
+    </head>
+    <body style="background-color: rgb(0, 255, 170)">
+        <style>
+            ul
+            {
+                list-style-type: none;
+                overflow:hidden;
+                background-color:#333333;
+
+            
+            }
+            li {float:left;}
+            li a {
+                display:block;
+                color:white;
+                text-align: center;
+                padding: 10px;
+
+            }
+            li a:hover{
+                background-color:#111543;
+            }
+            .city {
+                background-color: black;
+                color: white;
+                margin:20px;
+                padding:20px;
+
+            }
+
+        
+        
+        
+        </style>
+        <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#home">services</a></li>
+            <li><a href="#home">contact</a></li>
+            <li><a href="#home">news</a></li>
+            <li><a href="#welcome.html">about us</a></li>
+            <li style="float: right;"><a href="#home">log out</a></li>
+            
+
+        </ul>
+        <div class="city">
+            <h2>london</h2>
+            <p>london is the capital of england</p>
+        </div>
+        <div class="city">
+            <h2>paris</h2>
+            <p>paris is the capital of france</p>
+        </div>
+        <div class="city">
+            <h2>tokyo</h2>
+            <p>tokyo is the capital of japan</p>
+        </div>
+        
+        <br>
+        <form onsubmit="return fn1()"action="welcome.html">
+
+            <h2>enter username:</h2>
+            <input id="head" type="text" placeholder="enter username"/>
+            <label id="ram" style="color:red;visibility: hidden">invalid</label>
+            
+            <h3>enter the password: </h3>
+            <input id="text"type="password"placeholder="enter password"/>
+            <label id="mohan" style="color:red;visibility: hidden">invalid</label><br>
+            <button type="submit">submit</button>
+        </form>
+    </body>
+</html>
